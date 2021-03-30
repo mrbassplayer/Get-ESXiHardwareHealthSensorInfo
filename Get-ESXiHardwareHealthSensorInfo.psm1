@@ -41,6 +41,6 @@
                 TimeStamp         = $viewhost.Runtime.HealthSystemRuntime.SystemHealthInfo.NumericSensorInfo.TimeStamp[$x]
             }) ## end new-object
             $x++
-        } ## end foreach-object
-    } ## end foreach-object
+        } ## end inner foreach-object
+    } ## end outer foreach-object
 } ## end function
