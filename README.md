@@ -5,7 +5,7 @@ This cmdlet is a rewrite of the code posted here by Wintel Rocks.
 
 https://techibee.com/powershell/powershell-get-vm-host-hardware-sensors-information-using-powercli/2970
 
-I rewrote the process for which the code gathers the host(s) information which i learned from this post published by Matt Boren.
+I rewrote the process for which the code gathers the host(s) information which I learned from this post by Matt Boren.
 
 https://www.vnugglets.com/2014/07/get-vmhost-fc-hba-wwn-info-most-quickly.html
 
