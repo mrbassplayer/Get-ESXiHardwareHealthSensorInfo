@@ -1,4 +1,4 @@
-﻿function Get-ESXiHardwareHealth {
+﻿function Get-ESXiHardwareHealthSensorInfo {
 <#
 .SYNOPSIS
 	Get detailed ESXi Hadrdware health Information.
@@ -14,7 +14,7 @@
     # params for the Get-View expression for getting the View objects
     $hshGetViewParams = @{
         ViewType = "HostSystem"
-        Property = "Name", "Runtime.connectionstate","Runtime.HealthSystemRuntime.SystemHealthInfo.NumericSensorInfo"
+        Property = "Name", "Runtime.connectionstate","Runtime.HealthSystemRuntime.SystemHealthInfo.NumericSensorInfo","Hardware.SystemInfo.SerialNumber"
     } ## end hashtable
          
     Switch ($PSCmdlet.ParameterSetName) {
@@ -30,6 +30,7 @@
         $viewHost.Runtime.HealthSystemRuntime.SystemHealthInfo.NumericSensorInfo | ForEach-Object {
             New-Object PSObject -Property ([ordered]@{
                 vmhost            = $viewHost.Name
+		SerialNumber      = $viewHost.Hardware.SystemInfo.SerialNumber
                 Status            = $viewHost.Runtime.HealthSystemRuntime.SystemHealthInfo.NumericSensorInfo.HealthState.key[$x]
                 Name              = $viewhost.Runtime.HealthSystemRuntime.SystemHealthInfo.NumericSensorInfo.Name[$x]
                 CurrentReading    = $viewhost.Runtime.HealthSystemRuntime.SystemHealthInfo.NumericSensorInfo.CurrentReading[$x]
