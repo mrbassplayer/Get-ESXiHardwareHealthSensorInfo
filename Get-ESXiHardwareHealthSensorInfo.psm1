@@ -1,7 +1,7 @@
 function Get-ESXiHardwareHealthSensorInfo {
     <#
     .SYNOPSIS
-            Gets Hardware Health of ESXi hosts.
+            Gets Hardware Health of Dell ESXi hosts.
     
     .DESCRIPTION
             This is a quick way to check on the hardware health across ESXi hosts.
